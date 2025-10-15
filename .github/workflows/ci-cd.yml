@@ -39,9 +39,10 @@ jobs:
           echo "${{ secrets.KUBE_CONFIG }}" > kubeconfig.yaml
           export KUBECONFIG=kubeconfig.yaml
 
-      - name: Deploy to Kubernetes
+      - name: Deploy to Kubernetes (manual/local)
         run: |
-          kubectl apply -f deployment/deployment.yaml
+          echo "Run this locally: kubectl apply -f deployment/deployment.yaml"
+
           kubectl apply -f deployment/service.yaml
 
       - name: Verify Deployment
