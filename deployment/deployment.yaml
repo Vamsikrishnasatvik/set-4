@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: set4-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: set4
+  template:
+    metadata:
+      labels:
+        app: set4
+    spec:
+      containers:
+        - name: set4-container
+          image: vamsi040/set-4:latest
+          ports:
+            - containerPort: 5000
